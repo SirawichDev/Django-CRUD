@@ -1,0 +1,8 @@
+from django.db import models
+from __future__ import unicode_literals
+# Create your models here.
+
+class Post(models.Model):
+    title = models.CharField()
+    Comment = models.TextField()
+    
