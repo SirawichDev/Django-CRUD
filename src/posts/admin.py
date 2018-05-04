@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import Post
 class IncreatOptionAdmin(admin.ModelAdmin):
-    list_display = ["title","Comment","timestamp"]
+    list_display = ["title","Comment","timestamp","updated"]
     class Meta:
         model = Post
 
