@@ -18,4 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^posts/$', "posts.views.post_home"),
+    #  url(r'^post/$', "posts.views.posts_home"),
 ]
