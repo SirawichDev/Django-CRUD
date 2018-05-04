@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Post
 class IncreatOptionAdmin(admin.ModelAdmin):
     list_display = ["title","Comment","timestamp","updated"]
-    list_display_links = ["updated"]
+    list_display_links = ["updated","title"]
     class Meta:
         model = Post
 
