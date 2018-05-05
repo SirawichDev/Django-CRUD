@@ -20,7 +20,7 @@ def go_to_list(request):
     return render(request, "index.html", connect)
 
 def go_to_create(request): 
-      Name = {
+    Name = {
         "FIRST_NAME": "Miewss",
         "LAST_NAME": "MOEW"
     } 
