@@ -12,16 +12,15 @@ def go_to_home(request):
 def go_to_list(request): 
       Name = {
         "FIRST_NAME": "Miew",
-        "LAST_NAME": "MOEW",
+        "LAST_NAME": "MOEW"
     } 
     return render(request, "index.html", {Name})
 
 def go_to_create(request): 
       Name = {
         "FIRST_NAME": "Miewss",
-        "LAST_NAME": "MOEW",
+        "LAST_NAME": "MOEW"
     } 
-
     return render(request, "index.html", {Name})
 
 def go_to_detail(request): 
