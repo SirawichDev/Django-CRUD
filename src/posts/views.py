@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from .models import Post
-from django.shortcuts import render
+from django.shortcuts import render , get_object_or_404
 
 # Create your views here.
 #มีrequest ต้องมี response
@@ -27,7 +27,11 @@ def go_to_create(request):
     return render(request, "index.html", Name)
 
 def go_to_detail(request): 
-    return HttpResponse("<h1>Detail</h1>")
+    static = get_object_or_404(Post, id=1)
+    connect = {
+        "static":static
+    }
+    return render(request,"index.html",connect)
 
 def go_to_delete(request): 
     return HttpResponse("<h1>Delete</h1>")
