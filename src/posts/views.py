@@ -11,12 +11,12 @@ def go_to_home(request):
     return HttpResponse("<h1>Home</h1>")
 
 def go_to_list(request): 
-      data = Post.objects.all()
-      connect = {
+    data = Post.objects.all()
+    connect = {
         "Post_data":data,
         "FIRST_NAME": "Miew",
         "LAST_NAME": "MOEW"
-    } 
+       } 
     return render(request, "index.html", connect)
 
 def go_to_create(request): 
