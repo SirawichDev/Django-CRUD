@@ -1,11 +1,11 @@
 <html>
 <body>
 HELLO {FIRST_NAME} 
-
+</br>
 {% for data in Post_data %}
-{{ data.id }}</br>
-{{ data.title }}</br>
-{{ data.Comment }}</br>
+Id : {{ data.id }}</br>
+Topic : {{ data.title }}</br>
+Content: {{ data.Comment }}</br>
 {% endfor %}
 </body>
 </html>
