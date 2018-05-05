@@ -1,5 +1,11 @@
 from django.conf.urls import url
-from . import views
+from .views import (
+    go_to_list
+    go_to_create
+    go_to_detail
+    go_to_update
+    go_to_delete
+)
 urlpatterns = [
     url(r'^$', views.go_to_list,name="list"),
 
