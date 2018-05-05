@@ -9,6 +9,9 @@ from django.shortcuts import render
 def go_to_home(request): 
     return HttpResponse("<h1>Home</h1>")
 
+def go_to_list(request): 
+    return HttpResponse("<h1>Hello</h1>")
+
 def go_to_create(request): 
     return HttpResponse("<h1>Create</h1>")
 
