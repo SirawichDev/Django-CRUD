@@ -1,5 +1,13 @@
 <html>
 <body>
-HELLO {{FIRST_NAME}}
+
+HELLO {FIRST_NAME} 
+</br>
+{% for data in Post_data %}
+</br>Id : {{ data.id }}</br>
+Topic : {{ data.title }}</br>
+Content: {{ data.Comment }}</br>
+{% endfor %}
+
 </body>
 </html>
