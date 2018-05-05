@@ -17,7 +17,7 @@ def go_to_list(request):
         "FIRST_NAME": "Miew",
         "LAST_NAME": "MOEW"
     } 
-    return render(request, "index.html", Name)
+    return render(request, "index.html", connect)
 
 def go_to_create(request): 
       Name = {
