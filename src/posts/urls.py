@@ -7,14 +7,14 @@ from .views import (
     go_to_delete
 )
 urlpatterns = [
-    url(r'^$', views.go_to_list,name="list"),
+    url(r'^$', go_to_list),
 
-    url(r'^create/$', views.go_to_create,name="create"),
+    url(r'^create/$',   go_to_create),
 
-    url(r'^detail/$', views.go_to_detail,name="detail"),
+    url(r'^detail/$',    go_to_detail),
 
-    url(r'^update/$', views.go_to_update,name="update"),
+    url(r'^update/$',  go_to_update),
 
-    url(r'^delete/$', views.go_to_delete,name="delete"),
+    url(r'^delete/$',   go_to_delete),
     #  url(r'^post/$', "posts.views.posts_home"),
 ]
