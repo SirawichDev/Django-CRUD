@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from posts.views import go_to_home
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/$', "posts.views.post_home"),
+    url(r'^posts/$', go_to_home,name="go_to_home"),
     #  url(r'^post/$', "posts.views.posts_home"),
 ]

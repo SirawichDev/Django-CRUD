@@ -6,5 +6,5 @@ from django.shortcuts import render
 
 
 
-def post_home(request): 
+def go_to_home(request): 
     return HttpResponse("<h1>Home</h1>")
