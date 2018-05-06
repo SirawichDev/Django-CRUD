@@ -1,10 +1,10 @@
 from django.http import HttpResponse
-from .models import Post
+
 from django.shortcuts import render , get_object_or_404
 
 # Create your views here.
 #มีrequest ต้องมี response
-
+from .models import Post
 
 
 def go_to_home(request): 
@@ -27,9 +27,9 @@ def go_to_create(request):
     return render(request, "index.html", Name)
 
 def go_to_detail(request): 
-    static = get_object_or_404(Post, id=1)
+    static = get_object_or_404(Post, id=2)
     connect = {
-        "static":static
+        "static":static,
     }
     return render(request,"index.html",connect)
 
