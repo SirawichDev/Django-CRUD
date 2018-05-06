@@ -26,8 +26,8 @@ def go_to_create(request):
     } 
     return render(request, "index.html", Name)
 
-def go_to_detail(request): 
-    static = get_object_or_404(Post, id=2)
+def go_to_detail(request,id=None): 
+    static = get_object_or_404(Post, id=id)
     connect = {
         "Topic": static.Topic,
         "static":static,
