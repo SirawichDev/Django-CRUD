@@ -31,7 +31,7 @@ def go_to_detail(request):
     connect = {
         "static":static,
     }
-    return render(request,"index.html",connect)
+    return render(request,"detail.html",connect)
 
 def go_to_delete(request): 
     return HttpResponse("<h1>Delete</h1>")
