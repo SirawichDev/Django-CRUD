@@ -11,7 +11,7 @@ urlpatterns = [
 
     url(r'^create/$', go_to_create),
 
-    url(r'^detail(?P<id>\d+)/$',    go_to_detail),
+    url(r'^(?P<ids>\d+)/$',    go_to_detail),
 
     url(r'^update/$',  go_to_update),
 
