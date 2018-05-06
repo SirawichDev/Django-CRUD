@@ -8,13 +8,9 @@ from .views import (
 )
 urlpatterns = [
     url(r'^$', go_to_list),
-
     url(r'^create/$', go_to_create),
-
-    url(r'^detail/(?P<id>\d+)/$',    go_to_detail),
-
+    url(r'^(?P<ids>\d+)/$',    go_to_detail),
     url(r'^update/$',  go_to_update),
-
     url(r'^delete/$',   go_to_delete),
     #  url(r'^post/$', "posts.views.posts_home"),
 ]
