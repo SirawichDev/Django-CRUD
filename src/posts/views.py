@@ -29,6 +29,7 @@ def go_to_create(request):
 def go_to_detail(request): 
     static = get_object_or_404(Post, id=2)
     connect = {
+        "Topic": static.Topic,
         "static":static,
     }
     return render(request,"detail.html",connect)
