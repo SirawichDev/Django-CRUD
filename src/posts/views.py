@@ -39,6 +39,17 @@ def go_to_create(request):
     } 
     return render(request, "form.html", Form)
 
+def go_to_update(request):  
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        inst = form.save(commit=False)
+        inst.save()
+    
+    Form = {
+        "form": form,
+    }
+    return render(request,"form.html",Form)
+    
 def go_to_detail(request,ids=None): 
     static = get_object_or_404(Post, id=ids)
     connect = {
@@ -49,6 +60,3 @@ def go_to_detail(request,ids=None):
 
 def go_to_delete(request): 
     return HttpResponse("<h1>Delete</h1>")
-
-def go_to_update(request):  
-    return HttpResponse("<h1>update</h1>")
