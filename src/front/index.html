@@ -1,13 +1,22 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <body>
-
-HELLO {FIRST_NAME} 
+    HELLO {{FIRST_NAME}}
 </br>
 {% for data in Post_data  %}
-<br/>
-Topic : {{ data.title }}</br>
-Content: {{ data.Comment }}</br>
+</br>
+<a href="/posts/{{ data.id }}/">{{ data.title }}</a>
+</br>
+Content: {{ data.Comment }}
+</br>
+Updated time : {{ data.updated }}
+</br>
 {% endfor %}
-
 </body>
 </html>
