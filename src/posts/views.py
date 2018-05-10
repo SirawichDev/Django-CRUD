@@ -29,7 +29,7 @@ def go_to_create(request):
         print(form.cleaned_data.get("title"))
         print(form.cleaned_data.get("Comment"))
         instanse.save()
-    
+        return HttpResponseRedirect(instanse.get_absolute_url())
     #Check POST แบบ Hard Core
     # if request.method == "POST":
     #     print(request.POST) 
@@ -45,7 +45,7 @@ def go_to_update(request,ids=None):
     if form.is_valid():
         inst = form.save(commit=False)
         inst.save()
-    
+        return HttpResponseRedirect(inst.get_absolute_url())
     Form = {
         "title":inst.title,
         "form": form,
