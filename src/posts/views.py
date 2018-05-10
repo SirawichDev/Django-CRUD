@@ -23,7 +23,10 @@ def go_to_list(request):
     return render(request, "index.html", connect)
 
 def go_to_create(request):
-    form = PostForm(request.POST or None)
+    form = PostForm(request.POST or None
+    if form.is_valid():
+        instanse = form.save(commit=False)
+        instanse.save()
     
     #Check POST แบบ Hard Core
     # if request.method == "POST":
