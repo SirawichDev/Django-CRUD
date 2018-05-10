@@ -14,3 +14,6 @@ class Post(models.Model):
 
     # def __str__(self):
     #     return self.title
+
+    def get_url(self):
+        return "/posts/%s/" %(self.id)

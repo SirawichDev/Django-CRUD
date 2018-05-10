@@ -8,7 +8,10 @@ from .models import Post
 
 
 def go_to_home(request): 
-    return render(request,"home.html")
+    test ={
+        "mi":"wew"
+    }
+    return render(request,"home.html",test)
 
 def go_to_list(request): 
     data = Post.objects.all()
