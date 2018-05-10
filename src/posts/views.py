@@ -8,14 +8,17 @@ from .models import Post
 
 
 def go_to_home(request): 
-    return HttpResponse("<h1>Home</h1>")
+    test ={
+        "mi":"wew"
+    }
+    return render(request,"home.html",test)
 
 def go_to_list(request): 
     data = Post.objects.all()
     connect = {
         "Post_data":data,
         "FIRST_NAME": "Miew",
-        "LAST_NAME": "MOEW"
+        "LAST_NAME": "MOEW",
        } 
     return render(request, "index.html", connect)
 
@@ -37,5 +40,5 @@ def go_to_detail(request,ids=None):
 def go_to_delete(request): 
     return HttpResponse("<h1>Delete</h1>")
 
-def go_to_update(request): 
+def go_to_update(request):  
     return HttpResponse("<h1>update</h1>")
