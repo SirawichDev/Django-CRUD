@@ -23,11 +23,14 @@ def go_to_list(request):
     return render(request, "index.html", connect)
 
 def go_to_create(request):
-    form = PostForm() 
+    form = PostForm()
+    #Check POST
+    if request.method == "POST":
+        print(request.POST) 
     Form = {
        "form" : form,
     } 
-    return render(request, "index.html", Form)
+    return render(request, "form.html", Form)
 
 def go_to_detail(request,ids=None): 
     static = get_object_or_404(Post, id=ids)
