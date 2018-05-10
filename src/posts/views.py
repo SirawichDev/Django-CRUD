@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-
+from .forms import PostForm
 from django.shortcuts import render , get_object_or_404
 
 # Create your views here.
@@ -22,12 +22,12 @@ def go_to_list(request):
        } 
     return render(request, "index.html", connect)
 
-def go_to_create(request): 
-    Name = {
-        "FIRST_NAME": "Miewss",
-        "LAST_NAME": "MOEW"
+def go_to_create(request):
+    form = PostForm() 
+    Form = {
+       "form" : form,
     } 
-    return render(request, "index.html", Name)
+    return render(request, "index.html", Form)
 
 def go_to_detail(request,ids=None): 
     static = get_object_or_404(Post, id=ids)
