@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^$', go_to_list),
     url(r'^create/$', go_to_create),
     url(r'^(?P<ids>\d+)/$', go_to_detail, name='detail'),
-    url(r'^update/$',  go_to_update),
+    url(r'^(?P<ids>\d+)/edit/$',  go_to_update ,name='update'),
     url(r'^delete/$',   go_to_delete),
     #  url(r'^post/$', "posts.views.posts_home"),
 ]

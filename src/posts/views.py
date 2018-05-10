@@ -39,18 +39,21 @@ def go_to_create(request):
     } 
     return render(request, "form.html", Form)
 
-def go_to_update(request):  
-    form = PostForm(request.POST or None)
+def go_to_update(request,ids=None):
+    inst = get_object_or_404(Post,id=ids)   
+    form = PostForm(request.POST or None,instance=inst)
     if form.is_valid():
         inst = form.save(commit=False)
         inst.save()
     
     Form = {
+        "title":inst.title,
         "form": form,
+        "instance":inst,
     }
     return render(request,"form.html",Form)
-    
-def go_to_detail(request,ids=None): 
+
+def go_to_detail(request,ids=None):
     static = get_object_or_404(Post, id=ids)
     connect = {
         "Topic": static.title,
