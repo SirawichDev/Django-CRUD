@@ -18,4 +18,4 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         #ids =>พารามิเตอร์ของ go_to_detail
-        return reverse("detail",kwargs={"ids": self.id})
+        return reverse("posts:detail",kwargs={"ids": self.id})
