@@ -6,6 +6,8 @@ downloads
 eggs
 parts
 src/posts/__pycache__/*
+src/posts/__pycache__/*
+src/posts/migrations/__pycache__/*
 src/*.egg-info
 lib
 lib64
