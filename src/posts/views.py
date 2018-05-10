@@ -1,4 +1,5 @@
 from django.http import HttpResponse,HttpResponseRedirect
+from django.contrib import messages
 from .forms import PostForm
 from django.shortcuts import render , get_object_or_404
 
@@ -29,7 +30,10 @@ def go_to_create(request):
         print(form.cleaned_data.get("title"))
         print(form.cleaned_data.get("Comment"))
         instanse.save()
+        messages.success(request,"Success Form was created ! ")
         return HttpResponseRedirect(instanse.get_absolute_url())
+    else:
+        messages.error(request,"Error : Failed to Create")
     #Check POST แบบ Hard Core
     # if request.method == "POST":
     #     print(request.POST) 
@@ -45,7 +49,11 @@ def go_to_update(request,ids=None):
     if form.is_valid():
         inst = form.save(commit=False)
         inst.save()
+        messages.success(request,"Success Edit !")
         return HttpResponseRedirect(inst.get_absolute_url())
+    else:
+        messages.error(request, "Error : Failed to Edit")
+
     Form = {
         "title":inst.title,
         "form": form,
