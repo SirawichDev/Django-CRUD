@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from .forms import PostForm
 from django.shortcuts import render , get_object_or_404
 
@@ -23,13 +23,37 @@ def go_to_list(request):
     return render(request, "index.html", connect)
 
 def go_to_create(request):
-    form = PostForm() 
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        instanse = form.save(commit=False)
+        print(form.cleaned_data.get("title"))
+        print(form.cleaned_data.get("Comment"))
+        instanse.save()
+        return HttpResponseRedirect(instanse.get_absolute_url())
+    #Check POST แบบ Hard Core
+    # if request.method == "POST":
+    #     print(request.POST) 
+
     Form = {
        "form" : form,
     } 
-    return render(request, "index.html", Form)
+    return render(request, "form.html", Form)
 
-def go_to_detail(request,ids=None): 
+def go_to_update(request,ids=None):
+    inst = get_object_or_404(Post,id=ids)   
+    form = PostForm(request.POST or None,instance=inst)
+    if form.is_valid():
+        inst = form.save(commit=False)
+        inst.save()
+        return HttpResponseRedirect(inst.get_absolute_url())
+    Form = {
+        "title":inst.title,
+        "form": form,
+        "instance":inst,
+    }
+    return render(request,"form.html",Form)
+
+def go_to_detail(request,ids=None):
     static = get_object_or_404(Post, id=ids)
     connect = {
         "Topic": static.title,
@@ -39,6 +63,3 @@ def go_to_detail(request,ids=None):
 
 def go_to_delete(request): 
     return HttpResponse("<h1>Delete</h1>")
-
-def go_to_update(request):  
-    return HttpResponse("<h1>update</h1>")
