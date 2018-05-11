@@ -1,7 +1,7 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import messages
 from .forms import PostForm
-from django.shortcuts import render , get_object_or_404
+from django.shortcuts import render , get_object_or_404,redirect
 
 # Create your views here.
 #มีrequest ต้องมี response
@@ -70,5 +70,7 @@ def go_to_detail(request,ids=None):
     return render(request,"detail.html",connect)
 
 def go_to_delete(request,ids=None):
-    inst = get_object_or_404(Post,id=ids) 
-    return render(request,"detail.html",connect)
+    inst = get_object_or_404(Post,id=ids)
+    inst.delete()
+    messages.success(request,"Deleted !")
+    return redirect("posts:ShowList")
