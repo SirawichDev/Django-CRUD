@@ -1,15 +1,8 @@
-<html>
-<body>
-
-
-
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+{% extends "Base.html" %}
+<head>
+    <title>{%block head_title %} {{static.title}}{{ block.super }}{%endblock head_title %} </title>
+</head>
+{% block content %}
 </br>
 <h1>Topic : {{ Topic }}</h1></br>
 </br>
@@ -17,5 +10,4 @@ Content : {{ static.Comment }}</br>
 Updated : {{ static.timestamp }}</br>
 
 
-</body>
-</html>
+{% endblock content %}
