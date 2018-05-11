@@ -22,17 +22,7 @@
 
     <div class="container">
         {% block content %}
-            HELLO {{FIRST_NAME}}
-        </br>
-        {% for data in Post_data  %}
-        </br>
-        <a href="/posts/{{ data.id }}/">{{ data.title }}</a>
-        </br>
-        Content: {{ data.Comment }}
-        </br>
-        Updated time : {{ data.updated }}
-        </br>
-        {% endfor %}
+    
     
         {% endblock content %}
 
