@@ -21,7 +21,7 @@ def go_to_list(request):
         "FIRST_NAME": "Miew",
         "LAST_NAME": "MOEW",
        } 
-    return render(request, "index.html", connect)
+    return render(request, "Base.html", connect)
 
 def go_to_create(request):
     form = PostForm(request.POST or None)
