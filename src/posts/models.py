@@ -19,3 +19,6 @@ class Post(models.Model):
     def get_absolute_url(self):
         #ids =>พารามิเตอร์ของ go_to_detail
         return reverse("posts:detail",kwargs={"ids": self.id})
+
+    # def get_list(self):
+    #     return reverse("posts:ShowList",kwargs={"ids": self.id})
