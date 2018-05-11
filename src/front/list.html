@@ -1,0 +1,18 @@
+{% extends "Base.html" %}
+
+{%block content%}
+HELLO {{FIRST_NAME}}
+</br>
+{% for data in Post_data  %}
+</br>
+<a href="/posts/{{ data.id }}/">{{ data.title }}</a>
+</br>
+Content: {{ data.Comment }}
+</br>
+Updated time : {{ data.updated }}
+</br>
+<form action="/posts/{{ data.id }}/">
+    <input type="submit" value="Edit" />
+</form>
+{% endfor %}
+{%endblock content%}
